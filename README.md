@@ -36,13 +36,10 @@ pip install -r requirements.txt
 3. Konfigurasi
 Semua API key dan token disimpan di file .env.
 
-Buat file .env dari file contoh:
-bash
-
+1. Buat file .env dari file contoh :
 cp .env.example .env
-Buka file .env dengan teks editor, lalu isi dengan kredensial Anda:
-ini
 
+2. Buka file .env dengan teks editor, lalu isi dengan kredensial Anda :
 # Vercel
 VERCEL_API_KEY="API_KEY_VERCEL_ANDA"
 
@@ -56,31 +53,33 @@ AZURE_SUBSCRIPTION_ID="ID_SUBSCRIPTION_AZURE_ANDA"
 TELEGRAM_BOT_TOKEN="TOKEN_BOT_TELEGRAM_ANDA"
 
 # ...dan seterusnya
+
 PERINGATAN: File .env berisi data rahasia. Jangan pernah mengunggah file ini ke GitHub.
 
 4. Cara Menjalankan
-Buat file bernama domains.txt di folder utama proyek.
-Isi file tersebut dengan daftar domain yang ingin diperiksa, satu domain per baris.
+1. Buat file bernama domains.txt di folder utama proyek.
+2. Isi file tersebut dengan daftar domain yang ingin diperiksa, satu domain per baris.
 
 example.com
 sub.example.net
-Jalankan tools:
-bash
 
+3. Jalankan tools :
 # Gunakan file domains.txt
 python main.py
 
 # Gunakan file kustom
 python main.py daftar-target-lain.txt
-Masukkan username dan password Anda saat diminta.
+
+4. Masukkan username dan password Anda saat diminta.
+
 5. Notifikasi Telegram
 Untuk menerima notifikasi, Anda harus didaftarkan oleh admin.
 
-Chat bot tim di Telegram dan kirim pesan /start.
-Dapatkan Chat ID Anda dari bot seperti @myidbot.
-Berikan Chat ID tersebut kepada admin untuk ditambahkan ke database.
-6. Struktur Folder
+1. Chat bot tim di Telegram dan kirim pesan /start.
+2. Dapatkan Chat ID Anda dari bot seperti @myidbot.
+3. Berikan Chat ID tersebut kepada admin untuk ditambahkan ke database.
 
+6. Struktur Folder
 danguard-v3.1/
 ├── main.py              # Script utama untuk dijalankan
 ├── config.py            # Pengaturan kredensial
@@ -90,6 +89,7 @@ danguard-v3.1/
 ├── scanner/             # Folder pemindai domain
 ├── claimers/            # Folder modul takeover
 └── notifications/       # Folder notifikasi
+
 Peringatan Keamanan
 Tools ini hanya boleh digunakan pada aset yang Anda miliki atau untuk mana Anda memiliki izin tertulis. Penggunaan tanpa izin adalah ilegal. Anda bertanggung jawab penuh atas tindakan Anda.
 ```
