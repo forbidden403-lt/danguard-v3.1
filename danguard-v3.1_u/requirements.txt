@@ -1,9 +1,0 @@
-python-dotenv
-bcrypt
-requests
-dnspython
-azure-identity
-azure-mgmt-web
-boto3
-google-api-python-client
-google-auth-oauthlib
