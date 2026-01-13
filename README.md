@@ -1,84 +1,95 @@
-# Danguard v3.1
+# Danguard v3.1 - Panduan Instalasi & Penggunaan
 
-<p align="center">
-  <strong>Automated Subdomain Takeover Suite</strong>
-</p>
+Tools untuk mendeteksi dan verifikasi kerentanan Subdomain Takeover.
 
-<p align="center">
-A fast, offensive security tool for identifying and verifying subdomain takeover vulnerabilities.
-</p>
+---
 
-<p align="center">
-  <img src="https://img.shields.io/badge/python-3.8+-blue.svg" alt="Python 3.8+">
-  <img src="https://img.shields.io/badge/license-internal-red.svg" alt="License">
-</p>
+## 1. Persiapan
 
-## Quick Start
+Pastikan komputer Anda sudah terinstall:
+-   Python 3.8 atau lebih baru
+-   Git
 
-Get up and running in under a minute.
+---
+
+## 2. Instalasi
+
+Buka terminal atau command prompt, lalu jalankan perintah berikut:
 
 ```bash
-# 1. Clone the repo
-git clone https://github.com/your-team/danguard-v3.1.git
+# 1. Clone repositori ini
+git clone https://github.com/username-anda/danguard-v3.1.git
 cd danguard-v3.1
 
-# 2. Setup a virtual environment
-python3 -m venv venv
+# 2. Buat dan aktifkan virtual environment
+python -m venv venv
+
+# Untuk Windows
+venv\Scripts\activate
+
+# Untuk macOS/Linux
 source venv/bin/activate
 
-# 3. Install dependencies
+# 3. Install semua library yang dibutuhkan
 pip install -r requirements.txt
 
-# 4. Configure your API keys
+3. Konfigurasi
+Semua API key dan token disimpan di file .env.
+
+Buat file .env dari file contoh:
+bash
+
 cp .env.example .env
-# Edit .env with your credentials
+Buka file .env dengan teks editor, lalu isi dengan kredensial Anda:
+ini
 
-# 5. Add your targets to domains.txt and run
+# Vercel
+VERCEL_API_KEY="API_KEY_VERCEL_ANDA"
+
+# Azure
+AZURE_CLIENT_ID="ID_APLIKASI_AZURE_ANDA"
+AZURE_TENANT_ID="ID_DIREKTORI_AZURE_ANDA"
+AZURE_CLIENT_SECRET="SECRET_AZURE_ANDA"
+AZURE_SUBSCRIPTION_ID="ID_SUBSCRIPTION_AZURE_ANDA"
+
+# Telegram
+TELEGRAM_BOT_TOKEN="TOKEN_BOT_TELEGRAM_ANDA"
+
+# ...dan seterusnya
+PERINGATAN: File .env berisi data rahasia. Jangan pernah mengunggah file ini ke GitHub.
+
+4. Cara Menjalankan
+Buat file bernama domains.txt di folder utama proyek.
+Isi file tersebut dengan daftar domain yang ingin diperiksa, satu domain per baris.
+
+example.com
+sub.example.net
+Jalankan tools:
+bash
+
+# Gunakan file domains.txt
 python main.py
 
-Configuration
-All operational keys are managed in the .env file. Copy .env.example to .env and fill it with your credentials.
+# Gunakan file kustom
+python main.py daftar-target-lain.txt
+Masukkan username dan password Anda saat diminta.
+5. Notifikasi Telegram
+Untuk menerima notifikasi, Anda harus didaftarkan oleh admin.
 
-# Example: Vercel
-VERCEL_API_KEY="your_vercel_api_key"
+Chat bot tim di Telegram dan kirim pesan /start.
+Dapatkan Chat ID Anda dari bot seperti @myidbot.
+Berikan Chat ID tersebut kepada admin untuk ditambahkan ke database.
+6. Struktur Folder
 
-# Example: Azure
-AZURE_CLIENT_ID="your_azure_client_id"
-AZURE_CLIENT_SECRET="your_azure_client_secret"
-AZURE_TENANT_ID="your_azure_tenant_id"
-AZURE_SUBSCRIPTION_ID="your_subscription_id"
-
-# ...and so on for all providers
-
-⚠️ Critical: The .env file is in .gitignore. Never commit your keys to the repository.
-
-Usage
-Run the tool against a list of domains.
-# Use the default target list (domains.txt)
-python main.py
-
-# Specify a custom target list
-python main.py path/to/your/targets.txt
-Features
-🔍 Multi-Provider Support: Azure, Vercel, AWS, Netlify, and more.
-⚡ Automated Claiming: Doesn't just find vulnerabilities; it verifies them by actively claiming the subdomain.
-📢 Real-Time Notifications: Get instant alerts in your team's Telegram on a successful takeover.
-👥 Team Authentication: Built-in login system ensures only authorized operators can run an operation.
-📊 JSON Reporting: All findings are exported to a structured JSON file for easy analysis.
-Telegram Notifications
-To receive Telegram alerts, your Chat ID must be registered by your team lead.
-
-Start a chat with the team's Telegram bot.
-Get your Chat ID from a bot like @myidbot.
-Send your Chat ID to your team lead to be added to the operator database.
-OpSec & Rules
-This is an offensive tool. You are responsible for its use.
-
-Authorization is mandatory. Only operate against assets you own or have explicit permission to test.
-Protect your keys. If you suspect a compromise, revoke them immediately.
-License
-Internal Use Only. Distribution outside the team is prohibited.
+danguard-v3.1/
+├── main.py              # Script utama untuk dijalankan
+├── config.py            # Pengaturan kredensial
+├── .env                 # File rahasia (buat sendiri)
+├── domains.txt          # Daftar target (buat sendiri)
+├── auth/                # Folder sistem login
+├── scanner/             # Folder pemindai domain
+├── claimers/            # Folder modul takeover
+└── notifications/       # Folder notifikasi
+Peringatan Keamanan
+Tools ini hanya boleh digunakan pada aset yang Anda miliki atau untuk mana Anda memiliki izin tertulis. Penggunaan tanpa izin adalah ilegal. Anda bertanggung jawab penuh atas tindakan Anda.
 ```
-
-
-
