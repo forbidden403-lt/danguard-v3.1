@@ -94,3 +94,8 @@ Untuk menerima notifikasi, Anda harus didaftarkan oleh admin.
 6. PERINGATAN KEAMANAN
 
 Tools ini hanya boleh digunakan pada aset yang Anda miliki atau untuk mana Anda memiliki izin tertulis. Penggunaan tanpa izin adalah ilegal. Anda bertanggung jawab penuh atas tindakan Anda.
+
+
+⚖️ License
+This project is licensed internally for team use only. Distribution or use outside the team is prohibited without explicit written permission.
+```
