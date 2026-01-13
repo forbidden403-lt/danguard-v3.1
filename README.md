@@ -91,33 +91,6 @@ Untuk menerima notifikasi, Anda harus didaftarkan oleh admin.
 
 ============================================================
 
-6. STRUKTUR FOLDER
-
-danguard-v3.1/
-├── main.py
-├── config.py
-├── .env
-├── domains.txt
-├── auth/
-│ ├── init.py
-│ └── auth_manager.py
-├── scanner/
-│ ├── init.py
-│ ├── dns_check.py
-│ ├── vendor_fingerprint.py
-│ └── analyzer.py
-├── claimers/
-│ ├── init.py
-│ ├── base_claimer.py
-│ └── vercel_claimer.py
-└── notifications/
-├── init.py
-└── telegram_notifier.py
-
-
-
-============================================================
-
-7. PERINGATAN KEAMANAN
+6. PERINGATAN KEAMANAN
 
 Tools ini hanya boleh digunakan pada aset yang Anda miliki atau untuk mana Anda memiliki izin tertulis. Penggunaan tanpa izin adalah ilegal. Anda bertanggung jawab penuh atas tindakan Anda.
