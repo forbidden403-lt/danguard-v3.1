@@ -20,18 +20,23 @@ Buka terminal atau command prompt, lalu jalankan perintah berikut:
 
 1. Clone repositori ini
    git clone https://github.com/forbidden403-lt/danguard-v3.1.git
+   
    cd danguard-v3.1
 
 2. Buat dan aktifkan virtual environment
+ 
    python -m venv venv
 
    Untuk Windows:
+   
    venv\Scripts\activate
 
    Untuk macOS/Linux:
+   
    source venv/bin/activate
 
 3. Install semua library yang dibutuhkan
+
    pip install -r requirements.txt
 
 ============================================================
