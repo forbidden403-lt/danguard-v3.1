@@ -96,6 +96,8 @@ Untuk menerima notifikasi, Anda harus didaftarkan oleh admin.
 Tools ini hanya boleh digunakan pada aset yang Anda miliki atau untuk mana Anda memiliki izin tertulis. Penggunaan tanpa izin adalah ilegal. Anda bertanggung jawab penuh atas tindakan Anda.
 
 
-⚖️ License
-This project is licensed internally for team use only. Distribution or use outside the team is prohibited without explicit written permission.
-```
+# Danguard v3.1
+
+![License](https://img.shields.io/badge/license-Internal%20Use%20Only-red)
+
+Tools untuk mendeteksi dan verifikasi kerentanan Subdomain Takeover.
