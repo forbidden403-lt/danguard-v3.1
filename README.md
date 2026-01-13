@@ -99,20 +99,22 @@ danguard-v3.1/
 ├── .env
 ├── domains.txt
 ├── auth/
-│   ├── __init__.py
-│   └── auth_manager.py
+│ ├── init.py
+│ └── auth_manager.py
 ├── scanner/
-│   ├── __init__.py
-│   ├── dns_check.py
-│   ├── vendor_fingerprint.py
-│   └── analyzer.py
+│ ├── init.py
+│ ├── dns_check.py
+│ ├── vendor_fingerprint.py
+│ └── analyzer.py
 ├── claimers/
-│   ├── __init__.py
-│   ├── base_claimer.py
-│   └── vercel_claimer.py
+│ ├── init.py
+│ ├── base_claimer.py
+│ └── vercel_claimer.py
 └── notifications/
-    ├── __init__.py
-    └── telegram_notifier.py
+├── init.py
+└── telegram_notifier.py
+
+
 
 ============================================================
 
