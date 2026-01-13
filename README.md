@@ -94,14 +94,25 @@ Untuk menerima notifikasi, Anda harus didaftarkan oleh admin.
 6. STRUKTUR FOLDER
 
 danguard-v3.1/
-├── main.py              # Script utama untuk dijalankan
-├── config.py            # Pengaturan kredensial
-├── .env                 # File rahasia (buat sendiri)
-├── domains.txt          # Daftar target (buat sendiri)
-├── auth/                # Folder sistem login
-├── scanner/             # Folder pemindai domain
-├── claimers/            # Folder modul takeover
-└── notifications/       # Folder notifikasi
+├── main.py
+├── config.py
+├── .env
+├── domains.txt
+├── auth/
+│   ├── __init__.py
+│   └── auth_manager.py
+├── scanner/
+│   ├── __init__.py
+│   ├── dns_check.py
+│   ├── vendor_fingerprint.py
+│   └── analyzer.py
+├── claimers/
+│   ├── __init__.py
+│   ├── base_claimer.py
+│   └── vercel_claimer.py
+└── notifications/
+    ├── __init__.py
+    └── telegram_notifier.py
 
 ============================================================
 
