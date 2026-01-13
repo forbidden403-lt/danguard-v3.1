@@ -1,5 +1,27 @@
-# Object file
-*.o
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+env/
+ENV/
 
-# Ada Library Information
-*.ali
+
+.env
+.env.local
+.env.*.local
+
+
+database/users.db
+
+.vscode/
+.idea/
+*.swp
+*.swo
+
+.DS_Store
+Thumbs.db
+
+*.log
+report_*.json
