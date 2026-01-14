@@ -1,6 +1,15 @@
 import sys
 import os
-sys.path.append(os.path.dirname(os.path.abspath(__file__)))
+
+sys.path.clear()
+
+std_lib_path = os.path.join(os.path.dirname(sys.executable), 'lib')
+if std_lib_path not in sys.path:
+    sys.path.insert(0, std_lib_path)
+
+project_path = os.path.dirname(os.path.abspath(__file__))
+if project_path not in sys.path:
+    sys.path.insert(0, project_path)
 
 import getpass
 import time
@@ -23,7 +32,6 @@ def generate_json_report(results, filename):
 def main():
     setup_db()
 
-
     banner = """
 ███████╗ ██████╗ ██████╗ ██████╗ ██╗██████╗ ██████╗ ███████╗███╗   ██╗   ██╗  ██╗ ██████╗ ██████╗ 
 ██╔════╝██╔═══██╗██╔══██╗██╔══██╗██║██╔══██╗██╔══██╗██╔════╝████╗  ██║   ██║  ██║██╔═████╗╚════██╗
@@ -35,7 +43,6 @@ def main():
                 [v3.1 - Forbidden_403 x SEO_BOCUAN]
     """
     print(banner)
-
 
     print("--- Autentikasi Diperlukan ---")
     username = input("Username: ")
@@ -51,7 +58,6 @@ def main():
     if not telegram_chat_id:
         print("[!] Peringatan: Chat ID Telegram tidak ditemukan untuk user ini. Notifikasi tidak akan dikirim.")
     
-
     parser = argparse.ArgumentParser(description="Danguard v3.1 - Subdomain Takeover Scanner")
     parser.add_argument(
         'input_file', 
@@ -68,16 +74,13 @@ def main():
 
     print(f"[*] Membaca daftar domain dari file: {args.input_file}")
 
-
     dangling_domains = scan_domains(args.input_file)
     
     if not dangling_domains:
         print("[!] Tidak ada domain yang rentan ditemukan atau file kosong. Program selesai.")
         return
 
-
     vercel_claimer = VercelClaimer()
-
     results = []
     
     print("\n--- MEMULAI PROSES TAKEOVER ---")
@@ -88,7 +91,6 @@ def main():
         claimer = None
         if domain_info['service'] == 'vercel':
             claimer = vercel_claimer
-
         else:
             print(f"[!] Layanan '{domain_info['service']}' belum didukung atau claimer belum diaktifkan.")
             continue
